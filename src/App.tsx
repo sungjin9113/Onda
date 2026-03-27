@@ -117,7 +117,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <motion.div 
-            className="lg:w-1/2"
+            className="lg:w-3/5"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
@@ -126,51 +126,34 @@ const Hero = () => {
             <div className="inline-block px-4 py-2 rounded-full bg-white text-blue-600 font-bold text-sm mb-6 shadow-sm border border-sky-100">
               ✨ 프리미엄 정기청소 서비스
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tighter mb-6 leading-[1.3] break-keep">
-              당신의 공간에 <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">새로운 활력</span>을 불어넣다
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tighter mb-6 leading-[1.2] break-keep">
+              당신의 공간에 <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">새로운 활력</span>을 불어넣다
             </h1>
-            <p className="text-lg md:text-xl text-slate-900 mb-10 leading-[1.6] tracking-tight break-keep font-medium">
+            <p className="text-lg md:text-xl text-slate-800 mb-10 leading-[1.6] tracking-tight break-keep font-medium max-w-2xl">
               전문적인 청소 매니저가 정기적으로 방문하여 항상 쾌적하고 완벽한 환경을 유지해 드립니다. 온다클린과 함께 일상의 여유를 되찾으세요.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:1600-9762" className="bg-blue-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+              <a href="tel:1600-9762" className="bg-blue-500 text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1 flex items-center justify-center gap-2">
                 무료 견적 받기 <ArrowRight className="w-5 h-5" />
               </a>
-              <a href="https://www.ondaclean.kr/" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 border-2 border-sky-100 px-8 py-4 rounded-full font-bold text-lg hover:bg-sky-50 hover:border-blue-200 transition-all flex items-center justify-center shadow-sm">
+              <a href="https://www.ondaclean.kr/" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 border-2 border-sky-100 px-10 py-5 rounded-full font-bold text-xl hover:bg-sky-50 hover:border-blue-200 transition-all flex items-center justify-center shadow-sm">
                 서비스 알아보기
               </a>
             </div>
             
-            <div className="mt-10 flex items-center gap-4">
+            <div className="mt-12 flex items-center gap-4">
               <div className="flex -space-x-3">
-                <img className="w-10 h-10 rounded-full border-2 border-white shadow-sm" src="https://i.pravatar.cc/100?img=1" alt="User" />
-                <img className="w-10 h-10 rounded-full border-2 border-white shadow-sm" src="https://i.pravatar.cc/100?img=2" alt="User" />
-                <img className="w-10 h-10 rounded-full border-2 border-white shadow-sm" src="https://i.pravatar.cc/100?img=3" alt="User" />
+                <img className="w-12 h-12 rounded-full border-2 border-white shadow-sm" src="https://i.pravatar.cc/100?img=1" alt="User" />
+                <img className="w-12 h-12 rounded-full border-2 border-white shadow-sm" src="https://i.pravatar.cc/100?img=2" alt="User" />
+                <img className="w-12 h-12 rounded-full border-2 border-white shadow-sm" src="https://i.pravatar.cc/100?img=3" alt="User" />
               </div>
               <div className="text-sm">
-                <div className="flex text-yellow-400">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                <div className="flex text-yellow-400 mb-1">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
                 </div>
-                <span className="font-semibold text-slate-800">15000+</span> 명의 고객이 만족했습니다
+                <span className="font-bold text-slate-900 text-base">15,000+</span> <span className="text-slate-800 font-medium">명의 고객이 만족했습니다</span>
               </div>
             </div>
-          </motion.div>
-          
-          <motion.div 
-            className="lg:w-1/2 w-full h-[450px] lg:h-[600px] relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-sky-50"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <img 
-              src="https://cdn.pixabay.com/photo/2024/03/28/05/50/cleaning-8660309_1280.jpg" 
-              alt="청소 전문가" 
-              className="absolute inset-0 w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
-            {/* 자연스러운 배경 어우러짐을 위한 오버레이 */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 to-transparent mix-blend-overlay pointer-events-none"></div>
           </motion.div>
         </div>
       </div>
