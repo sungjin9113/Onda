@@ -102,12 +102,18 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section 
-      className="pt-32 pb-20 overflow-hidden relative bg-cover bg-center"
-      style={{ backgroundImage: `url('https://i.pinimg.com/736x/c3/7d/44/c37d449007b76736b6d029f65b817da6.jpg')` }}
-    >
-      {/* Dimming overlay for readability */}
-      <div className="absolute inset-0 bg-white/40"></div>
+    <section className="pt-32 pb-20 overflow-hidden relative">
+      {/* Background image with filters for better sharpness/quality feel */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center scale-105"
+        style={{ 
+          backgroundImage: `url('https://i.pinimg.com/736x/c0/9c/89/c09c89f6efe6ccf66a9fdbf785694c0b.jpg')`,
+          filter: 'contrast(1.05) saturate(1.05) brightness(1.02)',
+        }}
+      ></div>
+
+      {/* Dimming overlay for readability - using gradient for better image visibility */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/40 to-transparent"></div>
 
       {/* Decorative background elements */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
