@@ -107,8 +107,9 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center scale-105"
         style={{ 
-          backgroundImage: `url('https://i.pinimg.com/736x/c0/9c/89/c09c89f6efe6ccf66a9fdbf785694c0b.jpg')`,
+          backgroundImage: `url('https://i.pinimg.com/originals/a1/e1/1a/a1e11ab81957bb35690ac6d55e7bf55c.jpg')`,
           filter: 'contrast(1.05) saturate(1.05) brightness(1.02)',
+          imageRendering: '-webkit-optimize-contrast'
         }}
       ></div>
 
