@@ -47,10 +47,10 @@ const Navbar = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-slate-600 hover:text-blue-600 font-semibold transition-colors">서비스 소개</a>
-            <a href="#process" className="text-slate-600 hover:text-blue-600 font-semibold transition-colors">이용 방법</a>
-            <a href="#reviews" className="text-slate-600 hover:text-blue-600 font-semibold transition-colors">이용 후기</a>
-            <a href="#faq" className="text-slate-600 hover:text-blue-600 font-semibold transition-colors">자주 묻는 질문</a>
+            <a href="#services" className="text-slate-800 hover:text-blue-600 font-bold transition-colors">서비스 소개</a>
+            <a href="#process" className="text-slate-800 hover:text-blue-600 font-bold transition-colors">이용 방법</a>
+            <a href="#reviews" className="text-slate-800 hover:text-blue-600 font-bold transition-colors">이용 후기</a>
+            <a href="#faq" className="text-slate-800 hover:text-blue-600 font-bold transition-colors">자주 묻는 질문</a>
             <div className="flex items-center gap-4 ml-4">
               <span className="text-slate-900 font-bold flex items-center gap-2">
                 <PhoneCall className="w-4 h-4 text-blue-500" />
@@ -63,7 +63,7 @@ const Navbar = () => {
           </div>
           
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-slate-600 p-2">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-slate-800 p-2">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -79,10 +79,10 @@ const Navbar = () => {
             className="md:hidden bg-white border-b border-sky-100 overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-4 flex flex-col">
-              <a href="#services" onClick={() => setIsOpen(false)} className="text-slate-600 font-semibold py-2">서비스 소개</a>
-              <a href="#process" onClick={() => setIsOpen(false)} className="text-slate-600 font-semibold py-2">이용 방법</a>
-              <a href="#reviews" onClick={() => setIsOpen(false)} className="text-slate-600 font-semibold py-2">이용 후기</a>
-              <a href="#faq" onClick={() => setIsOpen(false)} className="text-slate-600 font-semibold py-2">자주 묻는 질문</a>
+              <a href="#services" onClick={() => setIsOpen(false)} className="text-slate-800 font-bold py-2">서비스 소개</a>
+              <a href="#process" onClick={() => setIsOpen(false)} className="text-slate-800 font-bold py-2">이용 방법</a>
+              <a href="#reviews" onClick={() => setIsOpen(false)} className="text-slate-800 font-bold py-2">이용 후기</a>
+              <a href="#faq" onClick={() => setIsOpen(false)} className="text-slate-800 font-bold py-2">자주 묻는 질문</a>
               <div className="pt-4 border-t border-slate-100 flex flex-col gap-4">
                 <span className="text-slate-900 font-bold flex items-center gap-2 justify-center">
                   <PhoneCall className="w-4 h-4 text-blue-500" />
@@ -102,11 +102,17 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="pt-32 pb-20 bg-gradient-to-br from-sky-100 via-sky-50 to-white overflow-hidden relative">
+    <section 
+      className="pt-32 pb-20 overflow-hidden relative bg-cover bg-center"
+      style={{ backgroundImage: `url('https://i.pinimg.com/736x/c3/7d/44/c37d449007b76736b6d029f65b817da6.jpg')` }}
+    >
+      {/* Dimming overlay for readability */}
+      <div className="absolute inset-0 bg-white/40"></div>
+
       {/* Decorative background elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-      <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-      <div className="absolute -bottom-8 left-40 w-72 h-72 bg-sky-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute -bottom-8 left-40 w-72 h-72 bg-sky-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -123,7 +129,7 @@ const Hero = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tighter mb-6 leading-[1.3] break-keep">
               당신의 공간에 <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">새로운 활력</span>을 불어넣다
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 mb-10 leading-[1.6] tracking-tight break-keep">
+            <p className="text-lg md:text-xl text-slate-900 mb-10 leading-[1.6] tracking-tight break-keep font-medium">
               전문적인 청소 매니저가 정기적으로 방문하여 항상 쾌적하고 완벽한 환경을 유지해 드립니다. 온다클린과 함께 일상의 여유를 되찾으세요.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -190,7 +196,7 @@ const Process = () => {
           variants={fadeInUp}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-5 tracking-tighter break-keep">간편한 이용 방법</h2>
-          <p className="text-lg md:text-xl text-slate-600 tracking-tight break-keep">단 3단계로 깨끗한 공간을 만들어보세요.</p>
+          <p className="text-lg md:text-xl text-slate-800 tracking-tight break-keep font-medium">단 3단계로 깨끗한 공간을 만들어보세요.</p>
         </motion.div>
         
         <motion.div 
@@ -209,7 +215,7 @@ const Process = () => {
                 {step.icon}
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight">{step.title}</h3>
-              <p className="text-slate-600 text-base md:text-lg leading-[1.6] tracking-tight break-keep">{step.desc}</p>
+              <p className="text-slate-800 text-base md:text-lg leading-[1.6] tracking-tight break-keep font-medium">{step.desc}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -260,7 +266,7 @@ const Features = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 leading-[1.3] tracking-tighter break-keep">
               당신의 라이프스타일에 맞춘 <br/><span className="text-blue-500">완벽한 청소 솔루션</span>
             </h2>
-            <p className="text-lg md:text-xl text-slate-600 mb-10 leading-[1.6] tracking-tight break-keep">
+            <p className="text-lg md:text-xl text-slate-800 mb-10 leading-[1.6] tracking-tight break-keep font-medium">
               온다클린의 전문 청소팀은 고객님의 공간이 항상 최적의 상태를 유지할 수 있도록 신속하고 전문적이며 친절한 서비스를 제공합니다.
             </p>
             <ul className="space-y-6">
@@ -374,7 +380,7 @@ const FAQ = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 leading-[1.3] tracking-tighter break-keep">
               자주 묻는 질문
             </h2>
-            <p className="text-lg md:text-xl text-slate-600 mb-10 leading-[1.6] tracking-tight break-keep">
+            <p className="text-lg md:text-xl text-slate-800 mb-10 leading-[1.6] tracking-tight break-keep font-medium">
               고객님들이 가장 궁금해하시는 질문들을 모았습니다. 원하는 정보를 찾지 못하셨다면 언제든지 문의해 주세요.
             </p>
             <a href="tel:1600-9762" className="bg-sky-100 text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-sky-200 transition-colors inline-block">
@@ -414,7 +420,7 @@ const FAQ = () => {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <div className="px-6 pb-5 md:px-8 md:pb-6 text-slate-600 text-base md:text-lg leading-[1.6] font-medium tracking-tight break-keep">
+                      <div className="px-6 pb-5 md:px-8 md:pb-6 text-slate-800 text-base md:text-lg leading-[1.6] font-bold tracking-tight break-keep">
                         {faq.a}
                       </div>
                     </motion.div>
@@ -447,7 +453,7 @@ const Testimonials = () => {
           variants={fadeInUp}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-5 tracking-tighter break-keep">고객님들의 생생한 후기</h2>
-          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-[1.6] tracking-tight break-keep">
+          <p className="text-lg md:text-xl text-slate-800 max-w-2xl mx-auto leading-[1.6] tracking-tight break-keep font-medium">
             온다클린과 함께 쾌적한 일상을 경험하고 계신 고객님들의 이야기입니다.
           </p>
         </motion.div>
