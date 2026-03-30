@@ -107,7 +107,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center scale-105"
         style={{ 
-          backgroundImage: `url('https://i.pinimg.com/originals/a1/e1/1a/a1e11ab81957bb35690ac6d55e7bf55c.jpg')`,
+          backgroundImage: `url('https://i.pinimg.com/originals/c3/7d/44/c37d449007b76736b6d029f65b817da6.jpg')`,
           filter: 'contrast(1.05) saturate(1.05) brightness(1.02)',
           imageRendering: '-webkit-optimize-contrast'
         }}
@@ -566,6 +566,38 @@ export default function App() {
       <Testimonials />
       <CTA />
       <Footer />
+      
+      {/* Sticky Bottom Banner */}
+      <motion.div 
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+        className="fixed bottom-0 left-0 right-0 z-50 p-4 pointer-events-none"
+      >
+        <div className="max-w-7xl mx-auto pointer-events-auto">
+          <div className="bg-gradient-to-r from-sky-600/80 via-sky-500/80 to-sky-600/80 backdrop-blur-lg saturate-150 border border-white/30 py-3 md:py-4 px-6 md:px-12 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-3 transition-all duration-700">
+            <div className="flex items-center gap-3">
+              <div className="bg-white p-1.5 rounded-full text-sky-600 shadow-md group-hover:scale-110 transition-transform duration-500">
+                <PhoneCall className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-white font-bold text-sm md:text-base block md:inline">상담 및 예약 문의</span>
+                <span className="hidden sm:inline-block md:hidden lg:inline-block text-sky-100 font-medium ml-2">빠르고 친절한 안내</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 md:gap-6">
+              <div className="hidden lg:block text-sky-50 font-medium text-xs">전문 매니저가 직접 상담해 드립니다</div>
+              <a 
+                href="tel:1600-9762" 
+                className="text-xl md:text-3xl font-black text-white tracking-tighter hover:text-sky-100 transition-all duration-300 flex items-center gap-1.5"
+              >
+                <span className="text-sky-200 text-lg md:text-xl font-bold">TEL.</span>
+                1600-9762
+              </a>
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 }
