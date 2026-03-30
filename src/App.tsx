@@ -18,8 +18,17 @@ import {
 } from 'lucide-react';
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      type: "spring",
+      damping: 25,
+      stiffness: 100,
+      duration: 0.8
+    } 
+  }
 };
 
 const staggerContainer = {
@@ -27,7 +36,8 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15
+      staggerChildren: 0.1,
+      delayChildren: 0.1
     }
   }
 };
@@ -127,7 +137,7 @@ const Hero = () => {
             className="lg:w-3/5"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeInUp}
           >
             <div className="inline-block px-4 py-2 rounded-full bg-white text-blue-600 font-bold text-sm mb-6 shadow-sm border border-sky-100">
@@ -182,7 +192,7 @@ const Process = () => {
           className="text-center mb-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={fadeInUp}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-5 tracking-tighter break-keep">간편한 이용 방법</h2>
@@ -194,7 +204,7 @@ const Process = () => {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           {/* Connecting lines for md+ screens */}
           <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-sky-100 z-0"></div>
@@ -223,7 +233,7 @@ const Features = () => {
             className="lg:w-1/2"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
           >
             <div className="relative">
@@ -250,7 +260,7 @@ const Features = () => {
             className="lg:w-1/2"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 leading-[1.3] tracking-tighter break-keep">
@@ -304,7 +314,7 @@ const Services = () => {
           className="text-center mb-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={fadeInUp}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-5 tracking-tighter break-keep">우리의 서비스</h2>
@@ -318,7 +328,7 @@ const Services = () => {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           {services.map((service, index) => (
             <motion.div 
@@ -364,7 +374,7 @@ const FAQ = () => {
             className="lg:w-1/3 mb-10 lg:mb-0"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeInUp}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 leading-[1.3] tracking-tighter break-keep">
@@ -382,7 +392,7 @@ const FAQ = () => {
             className="lg:w-2/3 space-y-4"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
           >
             {faqs.map((faq, index) => (
@@ -439,7 +449,7 @@ const Testimonials = () => {
           className="text-center mb-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={fadeInUp}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-5 tracking-tighter break-keep">고객님들의 생생한 후기</h2>
@@ -453,7 +463,7 @@ const Testimonials = () => {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           {reviews.map((review, index) => (
             <motion.div key={index} variants={fadeInUp} className="bg-white p-8 rounded-3xl shadow-sm border border-sky-100 relative hover:shadow-md transition-shadow">
@@ -484,7 +494,7 @@ const CTA = () => {
         className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
         variants={fadeInUp}
       >
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-[1.3] tracking-tighter break-keep">
