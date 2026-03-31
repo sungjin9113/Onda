@@ -14,7 +14,9 @@ import {
   Star,
   Menu,
   X,
-  ArrowRight
+  ArrowRight,
+  ShieldCheck,
+  Warehouse
 } from 'lucide-react';
 
 const fadeInUp = {
@@ -117,14 +119,15 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center scale-105"
         style={{ 
-          backgroundImage: `url('https://i.pinimg.com/originals/c3/7d/44/c37d449007b76736b6d029f65b817da6.jpg')`,
-          filter: 'contrast(1.05) saturate(1.05) brightness(1.02)',
+          backgroundImage: `url('https://i.pinimg.com/originals/9f/b5/05/9fb50593e522fb2c1f46b2bac7227e8c.jpg')`,
+          filter: 'contrast(1.1) saturate(1.1) brightness(0.9)',
           imageRendering: '-webkit-optimize-contrast'
         }}
       ></div>
 
-      {/* Dimming overlay for readability - using gradient for better image visibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/40 to-transparent"></div>
+      {/* Dimming overlay for readability */}
+      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
 
       {/* Decorative background elements */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -143,15 +146,15 @@ const Hero = () => {
             <div className="inline-block px-4 py-2 rounded-full bg-white text-blue-600 font-bold text-sm mb-6 shadow-sm border border-sky-100">
               ✨ 프리미엄 정기청소 서비스
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tighter mb-6 leading-[1.2] break-keep">
-              당신의 공간에 <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">새로운 활력</span>을 불어넣다
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-tighter mb-6 leading-[1.2] break-keep">
+              관리의 차이가 <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">공간의 가치</span>를 바꿉니다
             </h1>
-            <p className="text-lg md:text-xl text-slate-800 mb-10 leading-[1.6] tracking-tight break-keep font-medium max-w-2xl">
-              전문적인 청소 매니저가 정기적으로 방문하여 항상 쾌적하고 완벽한 환경을 유지해 드립니다. 온다클린과 함께 일상의 여유를 되찾으세요.
+            <p className="text-lg md:text-xl text-slate-100 mb-10 leading-[1.6] tracking-tight break-keep font-medium max-w-2xl">
+              표면이 아닌 내부까지, 경험 많은 정기관리 전문가가 <br className="hidden md:block" />체계적인 관리로 공간의 가치를 높입니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="tel:1600-9762" className="bg-blue-500 text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                무료 견적 받기 <ArrowRight className="w-5 h-5" />
+                견적 문의 하기 <ArrowRight className="w-5 h-5" />
               </a>
               <a href="https://www.ondaclean.kr/" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 border-2 border-sky-100 px-10 py-5 rounded-full font-bold text-xl hover:bg-sky-50 hover:border-blue-200 transition-all flex items-center justify-center shadow-sm">
                 서비스 알아보기
@@ -159,16 +162,11 @@ const Hero = () => {
             </div>
             
             <div className="mt-12 flex items-center gap-4">
-              <div className="flex -space-x-3">
-                <img className="w-12 h-12 rounded-full border-2 border-white shadow-sm" src="https://i.pravatar.cc/100?img=1" alt="User" />
-                <img className="w-12 h-12 rounded-full border-2 border-white shadow-sm" src="https://i.pravatar.cc/100?img=2" alt="User" />
-                <img className="w-12 h-12 rounded-full border-2 border-white shadow-sm" src="https://i.pravatar.cc/100?img=3" alt="User" />
-              </div>
-              <div className="text-sm">
-                <div className="flex text-yellow-400 mb-1">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
+              <div className="text-lg md:text-xl">
+                <div className="flex text-yellow-400 mb-2">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 md:w-7 md:h-7 fill-current" />)}
                 </div>
-                <span className="font-bold text-slate-900 text-base">15,000+</span> <span className="text-slate-800 font-medium">명의 고객이 만족했습니다</span>
+                <span className="font-bold text-white text-xl md:text-2xl">15,000+</span> <span className="text-slate-200 font-medium">명의 고객이 만족했습니다</span>
               </div>
             </div>
           </motion.div>
@@ -180,7 +178,7 @@ const Hero = () => {
 
 const Process = () => {
   const steps = [
-    { icon: <PhoneCall className="w-8 h-8 text-blue-500" />, title: "상담 및 문의", desc: "전화나 온라인으로 간편하게 청소 상담을 신청하세요." },
+    { icon: <PhoneCall className="w-8 h-8 text-blue-500" />, title: "상담 및 문의", desc: <>전화나 온라인으로 간편하게<br />청소 상담을 신청하세요.</> },
     { icon: <ClipboardList className="w-8 h-8 text-blue-500" />, title: "맞춤 견적 및 플랜", desc: "전문가가 공간을 분석하고 최적의 정기청소 플랜을 제안합니다." },
     { icon: <Sparkles className="w-8 h-8 text-blue-500" />, title: "정기 방문 청소", desc: "정해진 일정에 맞춰 전문 매니저가 방문하여 완벽하게 청소합니다." }
   ];
@@ -215,7 +213,7 @@ const Process = () => {
                 {step.icon}
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight">{step.title}</h3>
-              <p className="text-slate-800 text-base md:text-lg leading-[1.6] tracking-tight break-keep font-medium">{step.desc}</p>
+              <p className="text-slate-800 text-base md:text-lg leading-[1.6] tracking-tight break-keep font-medium text-center max-w-[260px] w-full mx-auto">{step.desc}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -236,21 +234,65 @@ const Features = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative">
-              <div className="absolute -inset-4 bg-blue-200 rounded-3xl transform rotate-3 opacity-50"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Cleaning professional" 
-                className="relative rounded-3xl shadow-xl object-cover h-[500px] w-full"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-sky-100">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <CheckCircle2 className="w-6 h-6 text-blue-600" />
+            <div className="relative h-[500px] w-full grid grid-cols-2 grid-rows-2 gap-4">
+              {/* Grid Images Layout */}
+              <motion.div 
+                className="col-span-1 row-span-2 cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.03, zIndex: 10 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <img 
+                  src="https://i.pinimg.com/736x/c0/9c/89/c09c89f6efe6ccf66a9fdbf785694c0b.jpg" 
+                  alt="Cleaning service 1" 
+                  className="rounded-3xl shadow-lg object-cover h-full w-full border border-sky-100"
+                  referrerPolicy="no-referrer"
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="col-span-1 row-span-1 cursor-pointer"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                whileHover={{ scale: 1.05, zIndex: 10 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <img 
+                  src="https://i.pinimg.com/736x/c3/7d/44/c37d449007b76736b6d029f65b817da6.jpg" 
+                  alt="Cleaning service 2" 
+                  className="rounded-3xl shadow-lg object-cover h-full w-full border border-sky-100"
+                  referrerPolicy="no-referrer"
+                />
+              </motion.div>
+
+              <motion.div 
+                className="col-span-1 row-span-1 cursor-pointer"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                whileHover={{ scale: 1.05, zIndex: 10 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <img 
+                  src="https://i.pinimg.com/736x/8f/40/3b/8f403b5a48fc773bd0495f009037ef3b.jpg" 
+                  alt="Cleaning service 3" 
+                  className="rounded-3xl shadow-lg object-cover h-full w-full border border-sky-100"
+                  referrerPolicy="no-referrer"
+                />
+              </motion.div>
+
+              {/* Satisfaction Badge */}
+              <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-xl border border-sky-100 z-30">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <CheckCircle2 className="w-5 h-5 text-blue-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-500 font-medium">고객 만족도</p>
-                    <p className="text-2xl font-extrabold text-slate-900">99.8%</p>
+                    <p className="text-xs text-slate-500 font-medium">고객 만족도</p>
+                    <p className="text-xl font-extrabold text-slate-900">99.8%</p>
                   </div>
                 </div>
               </div>
@@ -264,7 +306,7 @@ const Features = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 leading-[1.3] tracking-tighter break-keep">
-              당신의 라이프스타일에 맞춘 <br/><span className="text-blue-500">완벽한 청소 솔루션</span>
+              당신의 라이프스타일에 맞춘 <span className="text-blue-500">완벽한 청소 솔루션</span>
             </h2>
             <p className="text-lg md:text-xl text-slate-800 mb-10 leading-[1.6] tracking-tight break-keep font-medium">
               온다클린의 전문 청소팀은 고객님의 공간이 항상 최적의 상태를 유지할 수 있도록 신속하고 전문적이며 친절한 서비스를 제공합니다.
@@ -273,7 +315,7 @@ const Features = () => {
               {[
                 "체계적인 교육을 이수한 검증된 청소 전문가",
                 "인체와 환경에 무해한 친환경 청소 용품 사용",
-                "만족하지 않으시면 다시 청소해드리는 100% 고객 만족 보장"
+                "청소 미흡시 A/S 진행, 100% 고객 만족 보장"
               ].map((item, i) => (
                 <li key={i} className="flex items-start bg-white p-5 rounded-2xl shadow-sm border border-sky-100">
                   <CheckCircle2 className="w-6 h-6 text-blue-500 mt-0.5 mr-4 flex-shrink-0" />
@@ -281,8 +323,8 @@ const Features = () => {
                 </li>
               ))}
             </ul>
-            <a href="https://www.ondaclean.kr/" target="_blank" rel="noopener noreferrer" className="mt-10 text-blue-600 font-bold text-lg inline-flex items-center hover:text-blue-800 transition-colors group">
-              더 알아보기 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            <a href="tel:1600-9762" className="mt-10 bg-blue-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1 inline-flex items-center justify-center gap-2 group">
+              견적 문의 하기 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
         </div>
@@ -298,7 +340,9 @@ const Services = () => {
     { icon: <Sparkles />, title: "상업 공간 청소", desc: "매장, 카페, 식당 등 방문객에게 좋은 인상을 주는 청결 유지" },
     { icon: <Wind />, title: "에어컨/세탁기 분해청소", desc: "보이지 않는 곳의 곰팡이와 먼지까지 완벽하게 제거" },
     { icon: <Droplets />, title: "이사/입주 청소", desc: "새로운 시작을 위한 빈틈없는 공간 살균 및 딥 클리닝" },
-    { icon: <ClipboardList />, title: "특수 청소", desc: "바닥 왁스 코팅, 카페트 클리닝 등 전문 장비가 필요한 청소" }
+    { icon: <ClipboardList />, title: "특수 청소", desc: "바닥 왁스 코팅, 카페트 클리닝 등 전문 장비가 필요한 청소" },
+    { icon: <ShieldCheck />, title: "방역 및 소독", desc: "바이러스와 세균으로부터 안전한 공간을 위한 전문 방역 서비스" },
+    { icon: <Warehouse />, title: "준공 및 공장 청소", desc: "대규모 시설 및 건축물 준공 후의 정밀 클리닝 서비스" }
   ];
 
   return (
@@ -317,14 +361,14 @@ const Services = () => {
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeInUp}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-5 tracking-tighter break-keep">우리의 서비스</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-5 tracking-tighter break-keep">온다클린만의 정기관리 서비스</h2>
           <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto leading-[1.6] tracking-tight break-keep">
-            온다클린은 고객님의 다양한 니즈를 충족시키기 위해 포괄적인 청소 서비스를 제공합니다.
+            온다클린은 체계적인 정기관리로 공간의 위생 수준을 지속적으로 관리합니다.
           </p>
         </motion.div>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -437,16 +481,23 @@ const FAQ = () => {
 
 const Testimonials = () => {
   const reviews = [
-    { name: "김지수", role: "스타트업 대표", content: "사무실 정기청소를 맡긴 후로 직원들의 만족도가 엄청나게 올라갔습니다. 항상 깨끗한 환경에서 일할 수 있어 업무 효율도 덩달아 상승했어요. 적극 추천합니다!", rating: 5 },
-    { name: "이민호", role: "맞벌이 부부", content: "퇴근 후 집안일 스트레스가 사라졌어요. 매주 알아서 척척 청소해주시니 주말에는 온전히 쉬거나 가족과 시간을 보낼 수 있어서 너무 행복합니다.", rating: 5 },
-    { name: "박소연", role: "카페 운영", content: "매장 청결이 생명인데, 온다클린 덕분에 항상 반짝거리는 매장을 유지하고 있습니다. 손님들도 매장이 깨끗하다고 칭찬을 많이 해주세요.", rating: 5 }
+    { name: "김지수", role: "사무실 정기청소", content: "사무실 정기청소를 맡긴 후로 직원들의 만족도가 엄청나게 올라갔습니다. 항상 깨끗한 환경에서 일할 수 있어 업무 효율도 덩달아 상승했어요.", rating: 5 },
+    { name: "이민호", role: "화장실 청소", content: "건물 화장실 청소가 항상 골칫거리였는데, 온다클린에 맡기고 나서는 악취도 사라지고 항상 쾌적하게 유지되고 있습니다.", rating: 5 },
+    { name: "박소연", role: "병원 정기청소", content: "병원은 위생이 가장 중요한데, 구석구석 보이지 않는 곳까지 꼼꼼하게 소독하고 청소해주셔서 안심하고 진료에 집중할 수 있습니다.", rating: 5 },
+    { name: "최영환", role: "계단 청소", content: "빌라 계단 청소를 정기적으로 받고 있습니다. 거미줄이나 먼지 없이 항상 깔끔하게 관리해주셔서 입주민들 모두 만족하고 있어요.", rating: 5 },
+    { name: "정은지", role: "사무실 청소", content: "바닥 왁스 코팅부터 쓰레기 분리수거까지 완벽하게 처리해주십니다. 아침에 출근할 때마다 상쾌한 기분이 들어서 너무 좋습니다.", rating: 5 },
+    { name: "강동원", role: "정기청소", content: "매주 정해진 시간에 정확히 방문하셔서 메뉴얼대로 깔끔하게 청소해주십니다. 믿고 맡길 수 있는 든든한 파트너입니다.", rating: 5 },
+    { name: "윤미래", role: "병원 청소", content: "환자분들이 대기실이 너무 깨끗해졌다고 칭찬을 많이 하십니다. 전문적인 장비와 친환경 세제를 사용해주셔서 더욱 신뢰가 갑니다.", rating: 5 },
+    { name: "송중기", role: "화장실 청소", content: "상가 공용 화장실이라 관리가 힘들었는데, 정기 청소 이후로는 컴플레인이 싹 사라졌습니다. 정말 감사합니다.", rating: 5 },
+    { name: "한지민", role: "계단 청소", content: "오래된 상가 건물이라 계단이 항상 지저분했는데, 정기 청소를 시작하고 건물이 한층 밝아진 느낌입니다. 가성비 최고예요.", rating: 5 },
+    { name: "유재석", role: "사무실 정기청소", content: "직원들이 청소 스트레스에서 벗어나 본업에만 집중할 수 있게 되었습니다. 꼼꼼한 마무리에 항상 감동받고 있습니다.", rating: 5 }
   ];
 
   return (
-    <section id="reviews" className="py-24 bg-sky-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="reviews" className="py-24 bg-sky-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -457,30 +508,25 @@ const Testimonials = () => {
             온다클린과 함께 쾌적한 일상을 경험하고 계신 고객님들의 이야기입니다.
           </p>
         </motion.div>
+      </div>
         
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+      <div className="relative w-full flex overflow-hidden group">
+        <div 
+          className="flex gap-6 md:gap-8 w-max px-4 animate-[marquee_80s_linear_infinite] group-hover:[animation-play-state:paused]"
         >
-          {reviews.map((review, index) => (
-            <motion.div key={index} variants={fadeInUp} className="bg-white p-8 rounded-3xl shadow-sm border border-sky-100 relative hover:shadow-md transition-shadow">
+          {[...reviews, ...reviews].map((review, index) => (
+            <div key={index} className="bg-white p-8 rounded-3xl shadow-sm border border-sky-100 relative hover:shadow-xl hover:-translate-y-1 hover:scale-[1.03] transition-all duration-300 w-[300px] md:w-[400px] shrink-0 flex flex-col cursor-pointer">
               <div className="flex text-yellow-400 mb-6">
                 {[...Array(review.rating)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
               </div>
-              <p className="text-slate-700 text-lg mb-8 leading-[1.6] font-medium tracking-tight break-keep">"{review.content}"</p>
-              <div className="flex items-center gap-4 mt-auto">
-                <img src={`https://i.pravatar.cc/150?img=${index + 10}`} alt={review.name} className="w-14 h-14 rounded-full bg-sky-100 border-2 border-white shadow-sm" />
-                <div>
-                  <h4 className="font-bold text-lg text-slate-900 tracking-tight">{review.name}</h4>
-                  <p className="text-base text-slate-500 font-medium tracking-tight">{review.role}</p>
-                </div>
+              <p className="text-slate-700 text-base md:text-lg mb-8 leading-[1.6] font-medium tracking-tight break-keep flex-grow">"{review.content}"</p>
+              <div className="mt-auto">
+                <h4 className="font-bold text-lg text-slate-900 tracking-tight">{review.name}</h4>
+                <p className="text-base text-slate-500 font-medium tracking-tight">{review.role}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -488,8 +534,11 @@ const Testimonials = () => {
 
 const CTA = () => {
   return (
-    <section className="py-24 bg-gradient-to-r from-blue-600 to-cyan-500 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+    <section 
+      className="py-24 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('https://i.pinimg.com/originals/8c/04/ce/8c04ceb956b8dddf3c4d00c11226cedd.jpg')" }}
+    >
+      <div className="absolute inset-0 bg-slate-900/50"></div>
       <motion.div 
         className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
         initial="hidden"
@@ -503,9 +552,26 @@ const CTA = () => {
         <p className="text-lg md:text-xl text-blue-50 mb-10 font-medium leading-[1.6] tracking-tight break-keep">
           간단한 정보 입력만으로 맞춤형 무료 견적을 받아보실 수 있습니다.
         </p>
-        <a href="tel:1600-9762" className="bg-yellow-400 text-slate-900 px-8 py-4 md:px-10 md:py-5 rounded-full font-bold text-lg md:text-xl hover:bg-yellow-300 transition-all shadow-xl transform hover:-translate-y-1 hover:scale-105 inline-block">
-          무료 견적 신청하기
-        </a>
+        <div className="flex justify-center items-start gap-4 md:gap-6 mt-8">
+          <a href="#" className="flex flex-col items-center gap-2 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
+            <img src="https://i.pinimg.com/736x/fb/60/1e/fb601ecc676085051fb2b43b614efb20.jpg" alt="Icon 1" className="w-16 h-16 md:w-20 md:h-20 rounded-xl shadow-xl object-cover" referrerPolicy="no-referrer" />
+            <span className="text-white text-base md:text-lg font-medium tracking-wide">후기보기</span>
+          </a>
+          <a href="tel:1600-9762" className="flex flex-col items-center gap-2 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
+            <img src="https://i.pinimg.com/736x/b1/91/1e/b1911ec333093ac5346f1074a13240e1.jpg" alt="Icon 2" className="w-16 h-16 md:w-20 md:h-20 rounded-xl shadow-xl object-cover" referrerPolicy="no-referrer" />
+            <span className="text-white text-base md:text-lg font-medium tracking-wide">톡톡문의</span>
+          </a>
+          <a href="#" className="flex flex-col items-center gap-2 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
+            <img src="https://i.pinimg.com/736x/a5/88/f3/a588f3ea99008fa3b3623914ffdd0d8d.jpg" alt="Icon 3" className="w-16 h-16 md:w-20 md:h-20 rounded-xl shadow-xl object-cover" referrerPolicy="no-referrer" />
+            <span className="text-white text-base md:text-lg font-medium tracking-wide">카톡문의</span>
+          </a>
+          <a href="#" className="flex flex-col items-center gap-2 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl shadow-xl overflow-hidden">
+              <img src="https://i.pinimg.com/736x/84/2b/c4/842bc49911d4074c58a8a5eccbcdefd4.jpg" alt="Icon 4" className="w-full h-full object-cover scale-[1.25]" referrerPolicy="no-referrer" />
+            </div>
+            <span className="text-white text-base md:text-lg font-medium tracking-wide">전화상담</span>
+          </a>
+        </div>
       </motion.div>
     </section>
   );
@@ -517,13 +583,13 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <div className="inline-flex items-center justify-center bg-white p-3 rounded-xl mb-6">
-              <img src="https://cdn.imweb.me/thumbnail/20240815/77005f7ea9df7.png" alt="온다클린" className="h-10 w-auto" />
+            <div className="mb-8 text-sm leading-relaxed tracking-normal break-keep text-slate-400 space-y-2">
+              <p className="font-bold text-slate-300 mb-4 text-base tracking-wide">프리미엄 청소업체 온다클린</p>
+              <p>상호명 : 주식회사 홈밸런스 <span className="mx-2 opacity-50">|</span> 대표 : 정석환, 오형석 <span className="mx-2 opacity-50">|</span> 사업자등록번호 : 380-81-03372</p>
+              <p>서울특별시 강북구 덕릉로 1, 2층 <span className="mx-2 opacity-50">|</span> 대표번호 : 1600-9762</p>
+              <p>법인등록번호 : 110111-092211 <span className="mx-2 opacity-50">|</span> 대표메일 : ondaclean91@gmail.com</p>
+              <p>통신판매업신고번호 : 2025-서울강북-0434</p>
             </div>
-            <p className="mb-6 max-w-sm leading-[1.6] tracking-tight break-keep">
-              프리미엄 정기청소 서비스 온다클린.<br/>
-              당신의 공간에 새로운 활력을 불어넣습니다.
-            </p>
             <div className="flex gap-4">
               <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors cursor-pointer">
                 <span className="font-bold">F</span>
@@ -557,7 +623,6 @@ const Footer = () => {
         </div>
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
           <p>&copy; 2026 OndaClean. All rights reserved.</p>
-          <p className="mt-4 md:mt-0">대표번호: 1600-6792 | 이메일: hello@ondaclean.com</p>
         </div>
       </div>
     </footer>
@@ -595,8 +660,8 @@ export default function App() {
                 <span className="hidden sm:inline-block md:hidden lg:inline-block text-sky-100 font-medium ml-2">빠르고 친절한 안내</span>
               </div>
             </div>
-            <div className="flex items-center gap-4 md:gap-6">
-              <div className="hidden lg:block text-sky-50 font-medium text-xs">전문 매니저가 직접 상담해 드립니다</div>
+            <div className="flex flex-1 items-center justify-end gap-4 md:gap-6">
+              <div className="hidden lg:flex flex-1 text-sky-50 font-medium text-sm xl:text-base items-center justify-end px-4 tracking-wide whitespace-nowrap">24시간 상담 가능, 고객센터로 문의주시면 빠르게 상담해 드립니다</div>
               <a 
                 href="tel:1600-9762" 
                 className="text-xl md:text-3xl font-black text-white tracking-tighter hover:text-sky-100 transition-all duration-300 flex items-center gap-1.5"
