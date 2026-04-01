@@ -1,8 +1,14 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 @import "tailwindcss";
 
+@keyframes rainbow-flow {
+  from { background-position: 0% center; }
+  to { background-position: -200% center; }
+}
+
 @theme {
   --font-sans: "Pretendard", ui-sans-serif, system-ui, sans-serif;
+  --animate-rainbow-slow: rainbow-flow 4s linear infinite;
 }
 
 @keyframes marquee {

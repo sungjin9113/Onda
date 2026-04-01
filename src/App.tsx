@@ -117,17 +117,18 @@ const Hero = () => {
     <section className="pt-32 pb-20 overflow-hidden relative">
       {/* Background image with filters for better sharpness/quality feel */}
       <div 
-        className="absolute inset-0 bg-cover bg-center scale-105"
+        className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: `url('https://i.pinimg.com/originals/9f/b5/05/9fb50593e522fb2c1f46b2bac7227e8c.jpg')`,
-          filter: 'contrast(1.1) saturate(1.1) brightness(0.9)',
-          imageRendering: '-webkit-optimize-contrast'
+          backgroundImage: `url('https://i.pinimg.com/originals/30/b2/8e/30b28e446601fb417bf8edd7561baacc.jpg')`,
+          filter: 'contrast(1.05) saturate(1.05) brightness(1)',
+          imageRendering: '-webkit-optimize-contrast',
+          transform: 'translateZ(0)'
         }}
       ></div>
 
-      {/* Dimming overlay for readability */}
-      <div className="absolute inset-0 bg-black/40"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
+      {/* Minimal overlay for maximum image clarity while maintaining readability */}
+      <div className="absolute inset-0 bg-black/15"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent"></div>
 
       {/* Decorative background elements */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -237,7 +238,7 @@ const Features = () => {
             <div className="relative h-[500px] w-full grid grid-cols-2 grid-rows-2 gap-4">
               {/* Grid Images Layout */}
               <motion.div 
-                className="col-span-1 row-span-2 cursor-pointer"
+                className="col-span-1 row-span-1 cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.03, zIndex: 10 }}
@@ -279,6 +280,22 @@ const Features = () => {
                 <img 
                   src="https://i.pinimg.com/736x/8f/40/3b/8f403b5a48fc773bd0495f009037ef3b.jpg" 
                   alt="Cleaning service 3" 
+                  className="rounded-3xl shadow-lg object-cover h-full w-full border border-sky-100"
+                  referrerPolicy="no-referrer"
+                />
+              </motion.div>
+
+              <motion.div 
+                className="col-span-1 row-span-1 cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.05, zIndex: 10 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <img 
+                  src="https://i.pinimg.com/736x/72/47/4c/72474c70a819814d1a6b4c68ebfc0187.jpg" 
+                  alt="Cleaning service 4" 
                   className="rounded-3xl shadow-lg object-cover h-full w-full border border-sky-100"
                   referrerPolicy="no-referrer"
                 />
@@ -336,21 +353,17 @@ const Features = () => {
 const Services = () => {
   const services = [
     { icon: <Building2 />, title: "오피스 정기청소", desc: "쾌적한 업무 환경 조성을 위한 맞춤형 사무실 청소 서비스" },
-    { icon: <Home />, title: "홈 클리닝", desc: "바쁜 현대인을 위한 집안 구석구석 꼼꼼한 주거 공간 청소" },
     { icon: <Sparkles />, title: "상업 공간 청소", desc: "매장, 카페, 식당 등 방문객에게 좋은 인상을 주는 청결 유지" },
-    { icon: <Wind />, title: "에어컨/세탁기 분해청소", desc: "보이지 않는 곳의 곰팡이와 먼지까지 완벽하게 제거" },
-    { icon: <Droplets />, title: "이사/입주 청소", desc: "새로운 시작을 위한 빈틈없는 공간 살균 및 딥 클리닝" },
-    { icon: <ClipboardList />, title: "특수 청소", desc: "바닥 왁스 코팅, 카페트 클리닝 등 전문 장비가 필요한 청소" },
     { icon: <ShieldCheck />, title: "방역 및 소독", desc: "바이러스와 세균으로부터 안전한 공간을 위한 전문 방역 서비스" },
     { icon: <Warehouse />, title: "준공 및 공장 청소", desc: "대규모 시설 및 건축물 준공 후의 정밀 클리닝 서비스" }
   ];
 
   return (
-    <section id="services" className="py-24 bg-blue-600 text-white relative overflow-hidden">
+    <section id="services" className="py-24 bg-sky-100 text-slate-900 relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500 rounded-full mix-blend-screen opacity-50 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-cyan-400 rounded-full mix-blend-screen opacity-30 blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply opacity-40 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply opacity-25 blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -361,8 +374,8 @@ const Services = () => {
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeInUp}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-5 tracking-tighter break-keep">온다클린만의 정기관리 서비스</h2>
-          <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto leading-[1.6] tracking-tight break-keep">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-5 tracking-tighter break-keep text-slate-900">온다클린만의 정기관리 서비스</h2>
+          <p className="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto leading-[1.6] tracking-tight break-keep font-medium">
             온다클린은 체계적인 정기관리로 공간의 위생 수준을 지속적으로 관리합니다.
           </p>
         </motion.div>
@@ -378,13 +391,13 @@ const Services = () => {
             <motion.div 
               key={index} 
               variants={fadeInUp}
-              className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl hover:bg-white/20 transition-all cursor-pointer group hover:-translate-y-1 shadow-lg"
+              className="bg-white border border-sky-200 p-8 rounded-2xl hover:shadow-xl transition-all cursor-pointer group hover:-translate-y-1 shadow-md"
             >
-              <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform shadow-inner">
+              <div className="w-14 h-14 bg-sky-100 rounded-xl flex items-center justify-center mb-6 text-blue-600 group-hover:scale-110 transition-transform shadow-inner">
                 {React.cloneElement(service.icon, { className: "w-7 h-7" })}
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-3 tracking-tight">{service.title}</h3>
-              <p className="text-blue-100 leading-[1.6] font-medium tracking-tight break-keep">{service.desc}</p>
+              <h3 className="text-xl md:text-2xl font-bold mb-3 tracking-tight text-slate-900">{service.title}</h3>
+              <p className="text-slate-600 leading-[1.6] font-medium tracking-tight break-keep">{service.desc}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -515,13 +528,13 @@ const Testimonials = () => {
           className="flex gap-6 md:gap-8 w-max px-4 animate-[marquee_80s_linear_infinite] group-hover:[animation-play-state:paused]"
         >
           {[...reviews, ...reviews].map((review, index) => (
-            <div key={index} className="bg-white p-8 rounded-3xl shadow-sm border border-sky-100 relative hover:shadow-xl hover:-translate-y-1 hover:scale-[1.03] transition-all duration-300 w-[300px] md:w-[400px] shrink-0 flex flex-col cursor-pointer">
-              <div className="flex text-yellow-400 mb-6">
+            <div key={index} className="bg-white p-8 rounded-3xl shadow-sm border border-sky-100 relative hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.04] transition-all duration-700 ease-in-out w-[300px] md:w-[400px] shrink-0 flex flex-col cursor-pointer will-change-transform group/card">
+              <div className="flex text-yellow-400 mb-6 group-hover/card:scale-110 transition-transform duration-500">
                 {[...Array(review.rating)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
               </div>
-              <p className="text-slate-700 text-base md:text-lg mb-8 leading-[1.6] font-medium tracking-tight break-keep flex-grow">"{review.content}"</p>
+              <p className="text-slate-700 text-base md:text-lg mb-8 leading-[1.6] font-medium tracking-tight break-keep flex-grow group-hover/card:text-slate-900 transition-colors duration-500">"{review.content}"</p>
               <div className="mt-auto">
-                <h4 className="font-bold text-lg text-slate-900 tracking-tight">{review.name}</h4>
+                <h4 className="font-bold text-lg text-slate-900 tracking-tight">{review.name.charAt(0)}**</h4>
                 <p className="text-base text-slate-500 font-medium tracking-tight">{review.role}</p>
               </div>
             </div>
@@ -553,19 +566,19 @@ const CTA = () => {
           간단한 정보 입력만으로 맞춤형 무료 견적을 받아보실 수 있습니다.
         </p>
         <div className="flex justify-center items-start gap-4 md:gap-6 mt-8">
-          <a href="#" className="flex flex-col items-center gap-2 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
+          <a href="https://blog.naver.com/ringto263" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
             <img src="https://i.pinimg.com/736x/fb/60/1e/fb601ecc676085051fb2b43b614efb20.jpg" alt="Icon 1" className="w-16 h-16 md:w-20 md:h-20 rounded-xl shadow-xl object-cover" referrerPolicy="no-referrer" />
             <span className="text-white text-base md:text-lg font-medium tracking-wide">후기보기</span>
           </a>
-          <a href="tel:1600-9762" className="flex flex-col items-center gap-2 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
+          <a href="https://talk.naver.com/profile/w4150l" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
             <img src="https://i.pinimg.com/736x/b1/91/1e/b1911ec333093ac5346f1074a13240e1.jpg" alt="Icon 2" className="w-16 h-16 md:w-20 md:h-20 rounded-xl shadow-xl object-cover" referrerPolicy="no-referrer" />
             <span className="text-white text-base md:text-lg font-medium tracking-wide">톡톡문의</span>
           </a>
-          <a href="#" className="flex flex-col items-center gap-2 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
+          <a href="https://pf.kakao.com/_KuTxhb" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
             <img src="https://i.pinimg.com/736x/a5/88/f3/a588f3ea99008fa3b3623914ffdd0d8d.jpg" alt="Icon 3" className="w-16 h-16 md:w-20 md:h-20 rounded-xl shadow-xl object-cover" referrerPolicy="no-referrer" />
             <span className="text-white text-base md:text-lg font-medium tracking-wide">카톡문의</span>
           </a>
-          <a href="#" className="flex flex-col items-center gap-2 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
+          <a href="tel:1600-9762" className="flex flex-col items-center gap-2 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl shadow-xl overflow-hidden">
               <img src="https://i.pinimg.com/736x/84/2b/c4/842bc49911d4074c58a8a5eccbcdefd4.jpg" alt="Icon 4" className="w-full h-full object-cover scale-[1.25]" referrerPolicy="no-referrer" />
             </div>
@@ -583,32 +596,25 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <div className="mb-8 text-sm leading-relaxed tracking-normal break-keep text-slate-400 space-y-2">
-              <p className="font-bold text-slate-300 mb-4 text-base tracking-wide">프리미엄 청소업체 온다클린</p>
-              <p>상호명 : 주식회사 홈밸런스 <span className="mx-2 opacity-50">|</span> 대표 : 정석환, 오형석 <span className="mx-2 opacity-50">|</span> 사업자등록번호 : 380-81-03372</p>
-              <p>서울특별시 강북구 덕릉로 1, 2층 <span className="mx-2 opacity-50">|</span> 대표번호 : 1600-9762</p>
-              <p>법인등록번호 : 110111-092211 <span className="mx-2 opacity-50">|</span> 대표메일 : ondaclean91@gmail.com</p>
-              <p>통신판매업신고번호 : 2025-서울강북-0434</p>
-            </div>
-            <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors cursor-pointer">
-                <span className="font-bold">F</span>
-              </div>
-              <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors cursor-pointer">
-                <span className="font-bold">I</span>
-              </div>
-              <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors cursor-pointer">
-                <span className="font-bold">Y</span>
-              </div>
+            <div className="mb-8 text-sm leading-[1.8] tracking-tight break-keep text-slate-400 space-y-1">
+              <p className="font-bold text-slate-200 mb-6 text-lg tracking-normal">프리미엄 청소업체 온다클린</p>
+              <p>- 상호명 : 주식회사 홈밸런스</p>
+              <p>- 대표 : 정석환, 오형석</p>
+              <p>- 사업자등록번호 : 380-81-0ㅇ372</p>
+              <p>- 서울특별시 강북구 덕릉로 1, 2층</p>
+              <p>- 대표번호 : 1600-9762</p>
+              <p>- 법인등록번호 : 110111-092211</p>
+              <p>- 대표메일 : ondaclean91@gmail.com</p>
+              <p>- 통신판매업신고번호 : 2025-서울강북-0434</p>
             </div>
           </div>
           <div>
             <h4 className="text-white font-bold mb-6 text-lg">서비스</h4>
             <ul className="space-y-3">
-              <li><a href="https://www.ondaclean.kr/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">오피스 청소</a></li>
-              <li><a href="https://www.ondaclean.kr/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">홈 클리닝</a></li>
+              <li><a href="https://www.ondaclean.kr/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">오피스 정기청소</a></li>
               <li><a href="https://www.ondaclean.kr/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">상업 공간 청소</a></li>
-              <li><a href="https://www.ondaclean.kr/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">특수 청소</a></li>
+              <li><a href="https://www.ondaclean.kr/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">방역 및 소독</a></li>
+              <li><a href="https://www.ondaclean.kr/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">준공 및 공장 청소</a></li>
             </ul>
           </div>
           <div>
@@ -650,21 +656,28 @@ export default function App() {
         className="fixed bottom-0 left-0 right-0 z-50 p-4 pointer-events-none"
       >
         <div className="max-w-7xl mx-auto pointer-events-auto">
-          <div className="bg-gradient-to-r from-sky-600/80 via-sky-500/80 to-sky-600/80 backdrop-blur-lg saturate-150 border border-white/30 py-3 md:py-4 px-6 md:px-12 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-3 transition-all duration-700">
-            <div className="flex items-center gap-3">
-              <div className="bg-white p-1.5 rounded-full text-sky-600 shadow-md group-hover:scale-110 transition-transform duration-500">
-                <PhoneCall className="w-4 h-4" />
+          <div className="bg-gradient-to-r from-sky-600/80 via-sky-500/80 to-sky-600/80 backdrop-blur-lg saturate-150 border border-white/30 py-3 md:py-4 px-6 md:px-12 rounded-2xl shadow-2xl flex items-center justify-between gap-4 transition-all duration-700 group">
+            <div className="flex items-center gap-2 md:gap-4 flex-1 min-w-0">
+              <div className="bg-white p-1 rounded-xl shadow-md group-hover:scale-110 transition-transform duration-500 overflow-hidden w-[60px] h-[30px] md:w-[100px] md:h-[50px] pl-0.5 md:pl-1 flex items-center justify-center shrink-0">
+                <img 
+                  src="https://cdn.imweb.me/thumbnail/20240815/77005f7ea9df7.png" 
+                  alt="Icon" 
+                  className="w-full h-full object-contain" 
+                  referrerPolicy="no-referrer" 
+                />
               </div>
-              <div>
-                <span className="text-white font-bold text-sm md:text-base block md:inline">상담 및 예약 문의</span>
-                <span className="hidden sm:inline-block md:hidden lg:inline-block text-sky-100 font-medium ml-2">빠르고 친절한 안내</span>
+              <div className="flex flex-1 font-black text-sm sm:text-base md:text-xl lg:text-2xl items-center justify-center tracking-tighter sm:tracking-tight lg:tracking-normal whitespace-nowrap drop-shadow-lg overflow-hidden">
+                <span className="hidden md:inline bg-clip-text text-transparent bg-[linear-gradient(to_right,#ff0000,#ff7f00,#ffff00,#00ff00,#0000ff,#4b0082,#8b00ff,#ff0000)] bg-[length:200%_auto] animate-rainbow-slow shrink-0">
+                  <span className="hidden lg:inline">24시간 상담가능, 고객센터로 문의주시면 </span>
+                  빠르게 상담해 드립니다!
+                </span>
+                <span className="hidden lg:inline text-white ml-2 shrink-0">지금바로 전화상담! &gt;&gt;</span>
               </div>
             </div>
-            <div className="flex flex-1 items-center justify-end gap-4 md:gap-6">
-              <div className="hidden lg:flex flex-1 text-sky-50 font-medium text-sm xl:text-base items-center justify-end px-4 tracking-wide whitespace-nowrap">24시간 상담 가능, 고객센터로 문의주시면 빠르게 상담해 드립니다</div>
+            <div className="flex items-center gap-4 md:gap-6 shrink-0">
               <a 
                 href="tel:1600-9762" 
-                className="text-xl md:text-3xl font-black text-white tracking-tighter hover:text-sky-100 transition-all duration-300 flex items-center gap-1.5"
+                className="text-xl md:text-3xl font-black tracking-tighter transition-all duration-300 flex items-center gap-1.5 bg-clip-text text-transparent bg-[linear-gradient(to_right,#ff0000,#ff7f00,#ffff00,#00ff00,#0000ff,#4b0082,#8b00ff,#ff0000)] bg-[length:200%_auto] animate-rainbow-slow drop-shadow-md"
               >
                 <span className="text-sky-200 text-lg md:text-xl font-bold">TEL.</span>
                 1600-9762
