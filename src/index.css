@@ -6,9 +6,23 @@
   to { background-position: -200% center; }
 }
 
+@keyframes rainbow-flow-reverse {
+  from { background-position: -200% center; }
+  to { background-position: 0% center; }
+}
+
 @theme {
   --font-sans: "Pretendard", ui-sans-serif, system-ui, sans-serif;
-  --animate-rainbow-slow: rainbow-flow 4s linear infinite;
+  --animate-rainbow-slow: rainbow-flow 8s linear infinite;
+  --animate-rainbow-fast: rainbow-flow-reverse 3s linear infinite;
+  --animate-rainbow-reverse: rainbow-flow-reverse 4s linear infinite;
+  --animate-shine: shine 4s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  20% { transform: translateX(250%) skewX(-20deg); }
+  100% { transform: translateX(250%) skewX(-20deg); }
 }
 
 @keyframes marquee {

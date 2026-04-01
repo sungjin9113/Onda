@@ -16,7 +16,8 @@ import {
   X,
   ArrowRight,
   ShieldCheck,
-  Warehouse
+  Warehouse,
+  MessageCircle
 } from 'lucide-react';
 
 const fadeInUp = {
@@ -656,9 +657,10 @@ export default function App() {
         className="fixed bottom-0 left-0 right-0 z-50 p-4 pointer-events-none"
       >
         <div className="max-w-7xl mx-auto pointer-events-auto">
-          <div className="bg-gradient-to-r from-sky-600/80 via-sky-500/80 to-sky-600/80 backdrop-blur-lg saturate-150 border border-white/30 py-3 md:py-4 px-6 md:px-12 rounded-2xl shadow-2xl flex items-center justify-between gap-4 transition-all duration-700 group">
-            <div className="flex items-center gap-2 md:gap-4 flex-1 min-w-0">
-              <div className="bg-white p-1 rounded-xl shadow-md group-hover:scale-110 transition-transform duration-500 overflow-hidden w-[60px] h-[30px] md:w-[100px] md:h-[50px] pl-0.5 md:pl-1 flex items-center justify-center shrink-0">
+          <div className="bg-white/95 backdrop-blur-xl border border-sky-200 py-2 md:py-2.5 px-4 md:px-8 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] flex items-center justify-between gap-4 transition-all duration-700 group">
+            <div className="flex items-center gap-4 md:gap-8 flex-1 min-w-0">
+              {/* Refined Logo Container - Adjusted size */}
+              <div className="bg-white p-1 rounded-full shadow-[0_2px_12px_rgba(255,255,255,0.5)] group-hover:scale-105 transition-transform duration-500 overflow-hidden w-[58px] h-[34px] md:w-[110px] md:h-[58px] flex items-center justify-center shrink-0 border border-sky-100/50">
                 <img 
                   src="https://cdn.imweb.me/thumbnail/20240815/77005f7ea9df7.png" 
                   alt="Icon" 
@@ -666,21 +668,43 @@ export default function App() {
                   referrerPolicy="no-referrer" 
                 />
               </div>
-              <div className="flex flex-1 font-black text-sm sm:text-base md:text-xl lg:text-2xl items-center justify-center tracking-tighter sm:tracking-tight lg:tracking-normal whitespace-nowrap drop-shadow-lg overflow-hidden">
-                <span className="hidden md:inline bg-clip-text text-transparent bg-[linear-gradient(to_right,#ff0000,#ff7f00,#ffff00,#00ff00,#0000ff,#4b0082,#8b00ff,#ff0000)] bg-[length:200%_auto] animate-rainbow-slow shrink-0">
-                  <span className="hidden lg:inline">24시간 상담가능, 고객센터로 문의주시면 </span>
-                  빠르게 상담해 드립니다!
-                </span>
-                <span className="hidden lg:inline text-white ml-2 shrink-0">지금바로 전화상담! &gt;&gt;</span>
+              
+              <div className="flex flex-1 items-center justify-center gap-4 md:gap-8 overflow-hidden">
+                <div className="flex items-center gap-2 md:gap-4 whitespace-nowrap overflow-hidden">
+                  {/* Phone Number with Icon */}
+                  <a 
+                    href="tel:1600-9762" 
+                    className="flex items-center gap-1.5 text-xl md:text-2xl lg:text-3xl font-black tracking-tighter bg-clip-text text-transparent bg-[linear-gradient(to_right,#f04444,#f0a044,#f0f044,#44f044,#4444f0,#a044f0,#f044f0,#f044f0)] bg-[length:200%_auto] animate-rainbow-fast drop-shadow-[0_1px_2px_rgba(0,0,0,0.2)] shrink-0"
+                  >
+                    <PhoneCall className="w-5 h-5 md:w-6 md:h-6 text-sky-600" />
+                    1600-9762
+                  </a>
+                  
+                  {/* Call Prompt */}
+                  <span className="font-semibold text-base md:text-lg lg:text-xl tracking-tighter text-slate-900 shrink-0 drop-shadow-sm">
+                    &lt;&lt; 지금바로 전화상담!
+                  </span>
+
+                  {/* Info Text */}
+                  <span className="hidden md:inline font-bold text-xs sm:text-sm md:text-base lg:text-lg tracking-tight bg-clip-text text-transparent bg-[linear-gradient(to_right,#f04444,#f0a044,#f0f044,#44f044,#4444f0,#a044f0,#f044f0,#f044f0)] bg-[length:200%_auto] animate-rainbow-slow drop-shadow-[0_1px_2px_rgba(0,0,0,0.2)]">
+                    24시간 상담가능, 고객센터로 문의주시면 빠르게 상담해 드립니다!
+                  </span>
+                </div>
               </div>
             </div>
-            <div className="flex items-center gap-4 md:gap-6 shrink-0">
+            
+            <div className="flex items-center shrink-0">
               <a 
-                href="tel:1600-9762" 
-                className="text-xl md:text-3xl font-black tracking-tighter transition-all duration-300 flex items-center gap-1.5 bg-clip-text text-transparent bg-[linear-gradient(to_right,#ff0000,#ff7f00,#ffff00,#00ff00,#0000ff,#4b0082,#8b00ff,#ff0000)] bg-[length:200%_auto] animate-rainbow-slow drop-shadow-md"
+                href="https://pf.kakao.com/_KuTxhb" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="relative overflow-hidden hidden sm:flex items-center gap-2 bg-[#FEE500] text-[#191919] px-4 md:px-6 py-2 md:py-2.5 rounded-full font-extrabold text-xs md:text-sm shadow-lg hover:scale-105 hover:bg-[#ffeb33] active:scale-95 transition-all shrink-0 border border-black/5"
               >
-                <span className="text-sky-200 text-lg md:text-xl font-bold">TEL.</span>
-                1600-9762
+                {/* Shine Effect */}
+                <div className="absolute inset-0 w-1/3 h-full bg-white/30 blur-sm animate-shine pointer-events-none" />
+                
+                <MessageCircle className="w-4 h-4 md:w-5 md:h-5 fill-current relative z-10" />
+                <span className="relative z-10">실시간 카톡상담</span>
               </a>
             </div>
           </div>
