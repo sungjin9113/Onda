@@ -659,8 +659,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto pointer-events-auto">
           <div className="bg-white/95 backdrop-blur-xl border border-sky-200 py-2 md:py-2.5 px-4 md:px-8 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] flex items-center justify-between gap-4 transition-all duration-700 group">
             <div className="flex items-center gap-4 md:gap-8 flex-1 min-w-0">
-              {/* Refined Logo Container - Adjusted size */}
-              <div className="bg-white p-1 rounded-full shadow-[0_2px_12px_rgba(255,255,255,0.5)] group-hover:scale-105 transition-transform duration-500 overflow-hidden w-[58px] h-[34px] md:w-[110px] md:h-[58px] flex items-center justify-center shrink-0 border border-sky-100/50">
+              {/* Refined Logo Container - Adjusted size - Hidden on mobile */}
+              <div className="hidden md:flex bg-white p-1 rounded-full shadow-[0_2px_12px_rgba(255,255,255,0.5)] group-hover:scale-105 transition-transform duration-500 overflow-hidden w-[58px] h-[34px] md:w-[110px] md:h-[58px] items-center justify-center shrink-0 border border-sky-100/50">
                 <img 
                   src="https://cdn.imweb.me/thumbnail/20240815/77005f7ea9df7.png" 
                   alt="Icon" 
@@ -680,8 +680,8 @@ export default function App() {
                     1600-9762
                   </a>
                   
-                  {/* Call Prompt */}
-                  <span className="font-semibold text-base md:text-lg lg:text-xl tracking-tighter text-slate-900 shrink-0 drop-shadow-sm">
+                  {/* Call Prompt - Hidden on mobile */}
+                  <span className="hidden md:inline font-semibold text-base md:text-lg lg:text-xl tracking-tighter text-slate-900 shrink-0 drop-shadow-sm">
                     &lt;&lt; 지금바로 전화상담!
                   </span>
 
@@ -698,7 +698,7 @@ export default function App() {
                 href="https://pf.kakao.com/_KuTxhb" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="relative overflow-hidden hidden sm:flex items-center gap-2 bg-[#FEE500] text-[#191919] px-4 md:px-6 py-2 md:py-2.5 rounded-full font-extrabold text-xs md:text-sm shadow-lg hover:scale-105 hover:bg-[#ffeb33] active:scale-95 transition-all shrink-0 border border-black/5"
+                className="relative overflow-hidden flex items-center gap-2 bg-[#FEE500] text-[#191919] px-4 md:px-6 py-2 md:py-2.5 rounded-full font-extrabold text-xs md:text-sm shadow-lg hover:scale-105 hover:bg-[#ffeb33] active:scale-95 transition-all shrink-0 border border-black/5"
               >
                 {/* Shine Effect */}
                 <div className="absolute inset-0 w-1/3 h-full bg-white/30 blur-sm animate-shine pointer-events-none" />
