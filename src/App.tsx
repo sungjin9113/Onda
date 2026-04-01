@@ -525,7 +525,7 @@ const Testimonials = () => {
         
       <div className="relative w-full flex overflow-hidden group">
         <div 
-          className="flex gap-6 md:gap-8 w-max px-4 animate-[marquee_80s_linear_infinite] group-hover:[animation-play-state:paused]"
+          className="flex gap-6 md:gap-8 w-max px-4 animate-[marquee_80s_linear_infinite] md:group-hover:[animation-play-state:paused] active:[animation-play-state:paused]"
         >
           {[...reviews, ...reviews].map((review, index) => (
             <div key={index} className="bg-white p-8 rounded-3xl shadow-sm border border-sky-100 relative hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.04] transition-all duration-700 ease-in-out w-[300px] md:w-[400px] shrink-0 flex flex-col cursor-pointer will-change-transform group/card">
