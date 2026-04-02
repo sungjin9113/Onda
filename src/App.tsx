@@ -59,17 +59,17 @@ const Navbar = () => {
             <img src="https://cdn.imweb.me/thumbnail/20240815/77005f7ea9df7.png" alt="온다클린" className="h-12 w-auto" />
           </div>
           
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-slate-800 hover:text-blue-600 font-bold transition-colors">서비스 소개</a>
-            <a href="#process" className="text-slate-800 hover:text-blue-600 font-bold transition-colors">이용 방법</a>
-            <a href="#reviews" className="text-slate-800 hover:text-blue-600 font-bold transition-colors">이용 후기</a>
-            <a href="#faq" className="text-slate-800 hover:text-blue-600 font-bold transition-colors">자주 묻는 질문</a>
-            <div className="flex items-center gap-4 ml-4">
-              <span className="text-slate-900 font-bold flex items-center gap-2">
-                <PhoneCall className="w-4 h-4 text-blue-500" />
+          <div className="hidden md:flex items-center md:space-x-4 lg:space-x-8">
+            <a href="#services" className="text-slate-800 hover:text-blue-600 font-bold transition-colors md:text-sm lg:text-base whitespace-nowrap">서비스 소개</a>
+            <a href="#process" className="text-slate-800 hover:text-blue-600 font-bold transition-colors md:text-sm lg:text-base whitespace-nowrap">이용 방법</a>
+            <a href="#reviews" className="text-slate-800 hover:text-blue-600 font-bold transition-colors md:text-sm lg:text-base whitespace-nowrap">이용 후기</a>
+            <a href="#faq" className="text-slate-800 hover:text-blue-600 font-bold transition-colors md:text-sm lg:text-base whitespace-nowrap">자주 묻는 질문</a>
+            <div className="flex items-center md:gap-2 lg:gap-4 md:ml-2 lg:ml-4">
+              <span className="text-slate-900 font-bold flex items-center gap-2 md:text-xs lg:text-base whitespace-nowrap">
+                <PhoneCall className="md:w-3 md:h-3 lg:w-4 lg:h-4 text-blue-500" />
                 1600-6792
               </span>
-              <a href="tel:1600-9762" className="bg-blue-500 text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block">
+              <a href="tel:1600-9762" className="bg-blue-500 text-white md:px-4 lg:px-6 py-2 md:py-2.5 rounded-full font-bold hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block md:text-xs lg:text-base whitespace-nowrap">
                 견적 문의
               </a>
             </div>
