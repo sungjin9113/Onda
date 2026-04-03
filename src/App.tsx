@@ -115,27 +115,18 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="pt-32 pb-20 overflow-hidden relative">
-      {/* Background image with filters for better sharpness/quality feel */}
+    <section className="pt-32 pb-12 overflow-hidden relative">
+      {/* Background image - high quality, as is */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: `url('https://i.pinimg.com/originals/30/b2/8e/30b28e446601fb417bf8edd7561baacc.jpg')`,
-          filter: 'contrast(1.05) saturate(1.05) brightness(1)',
-          imageRendering: '-webkit-optimize-contrast',
+          backgroundImage: `url('https://i.pinimg.com/736x/3c/97/0c/3c970c0560acd806ad097f97dbee257c.jpg')`,
+          imageRendering: 'auto',
           transform: 'translateZ(0)'
         }}
       ></div>
 
-      {/* Minimal overlay for maximum image clarity while maintaining readability */}
-      <div className="absolute inset-0 bg-black/15"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent"></div>
-
-      {/* Decorative background elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute -bottom-8 left-40 w-72 h-72 bg-sky-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-
+      {/* Content container with text shadows for readability on the clear background */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <motion.div 
@@ -145,13 +136,13 @@ const Hero = () => {
             viewport={{ once: true, amount: 0.2 }}
             variants={fadeInUp}
           >
-            <div className="inline-block px-4 py-2 rounded-full bg-white text-blue-600 font-bold text-sm mb-6 shadow-sm border border-sky-100">
+            <div className="inline-block px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm text-blue-600 font-bold text-sm mb-6 shadow-md border border-sky-100">
               ✨ 프리미엄 정기청소 서비스
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-tighter mb-6 leading-[1.2] break-keep">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-tighter mb-6 leading-[1.2] break-keep [text-shadow:_0_4px_8px_rgba(0,0,0,0.5)]">
               관리의 차이가 <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">공간의 가치</span>를 바꿉니다
             </h1>
-            <p className="text-lg md:text-xl text-slate-100 mb-10 leading-[1.6] tracking-tight break-keep font-medium max-w-2xl">
+            <p className="text-lg md:text-xl text-white mb-10 leading-[1.6] tracking-tight break-keep font-bold max-w-2xl [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
               표면이 아닌 내부까지, 경험 많은 정기관리 전문가가 <br className="hidden md:block" />체계적인 관리로 공간의 가치를 높입니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -168,10 +159,67 @@ const Hero = () => {
                 <div className="flex text-yellow-400 mb-2">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 md:w-7 md:h-7 fill-current" />)}
                 </div>
-                <span className="font-bold text-white text-xl md:text-2xl">15,000+</span> <span className="text-slate-200 font-medium">명의 고객이 만족했습니다</span>
+                <span className="font-bold text-white text-xl md:text-2xl [text-shadow:_0_2px_4px_rgba(0,0,0,0.3)]">15,000+</span> <span className="text-white font-bold [text-shadow:_0_2px_4px_rgba(0,0,0,0.3)]">명의 고객이 만족했습니다</span>
               </div>
             </div>
           </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Gallery = () => {
+  const galleryImages = [
+    "https://i.pinimg.com/736x/b5/46/3e/b5463edbdddf3e10632321c9e4473378.jpg",
+    "https://i.pinimg.com/736x/e0/4f/de/e04fde3194a36901d641d010e5491156.jpg",
+    "https://i.pinimg.com/736x/69/68/f9/6968f9b20dfa6cee72c7b2ec7a3a0aee.jpg",
+    "https://i.pinimg.com/736x/46/db/40/46db40eb7902682ee930eabbbd11e805.jpg",
+    "https://i.pinimg.com/736x/5a/3b/57/5a3b57dffc5eb580e4f5d30bc16ab905.jpg",
+    "https://i.pinimg.com/736x/82/2b/b6/822bb6d3d060af784082e1248a4e1d2c.jpg",
+    "https://i.pinimg.com/736x/1d/1d/26/1d1d2600d62bc88e39e07a0d5724115a.jpg",
+    "https://i.pinimg.com/736x/b4/28/52/b428525f3e7a86dae2a3fe9dcb109fae.jpg",
+    "https://i.pinimg.com/736x/72/97/db/7297db049da1ae6057d4952c1004711e.jpg",
+    "https://i.pinimg.com/736x/2e/ac/a6/2eaca6876368b39743dfb37200ac483b.jpg",
+    "https://i.pinimg.com/736x/08/63/f3/0863f3cfe75af73e5a4013f1f04f2296.jpg",
+    "https://i.pinimg.com/736x/3e/d6/3a/3ed63a138f09f1ba2fe1c98136991e82.jpg",
+  ];
+
+  return (
+    <section className="py-12 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+        <motion.div 
+          className="text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeInUp}
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-5 tracking-tighter break-keep">청소 현장 사진</h2>
+          <p className="text-lg md:text-xl text-slate-800 max-w-2xl mx-auto leading-[1.6] tracking-tight break-keep font-medium">
+            온다클린의 작업 현장 사진 경험해보세요.
+          </p>
+        </motion.div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
+          {galleryImages.map((src, index) => (
+            <motion.div 
+              key={index}
+              className="relative aspect-[4/3] overflow-hidden group cursor-pointer rounded-2xl shadow-lg border border-sky-100/30 hover:shadow-xl transition-shadow duration-300"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+            >
+              <img 
+                src={src} 
+                alt={`Cleaning work ${index + 1}`}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -186,7 +234,7 @@ const Process = () => {
   ];
 
   return (
-    <section id="process" className="py-24 bg-white">
+    <section id="process" className="py-16 bg-sky-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -641,6 +689,7 @@ export default function App() {
     <div className="min-h-screen font-sans text-slate-900 selection:bg-blue-200 selection:text-blue-900">
       <Navbar />
       <Hero />
+      <Gallery />
       <Process />
       <Features />
       <Services />
