@@ -120,7 +120,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: `url('https://i.pinimg.com/736x/3c/97/0c/3c970c0560acd806ad097f97dbee257c.jpg')`,
+          backgroundImage: `url('/images/hero-bg.jpg')`,
           imageRendering: 'auto',
           transform: 'translateZ(0)'
         }}
