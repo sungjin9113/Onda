@@ -67,7 +67,7 @@ const Navbar = () => {
             <div className="flex items-center md:gap-2 lg:gap-4 md:ml-2 lg:ml-4">
               <span className="text-slate-900 font-bold flex items-center gap-2 md:text-xs lg:text-base whitespace-nowrap">
                 <PhoneCall className="md:w-3 md:h-3 lg:w-4 lg:h-4 text-blue-500" />
-                1600-6792
+                1600-9762
               </span>
               <a href="tel:1600-9762" className="bg-blue-500 text-white md:px-4 lg:px-6 py-2 md:py-2.5 rounded-full font-bold hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block md:text-xs lg:text-base whitespace-nowrap">
                 견적 문의
@@ -99,7 +99,7 @@ const Navbar = () => {
               <div className="pt-4 border-t border-slate-100 flex flex-col gap-4">
                 <span className="text-slate-900 font-bold flex items-center gap-2 justify-center">
                   <PhoneCall className="w-4 h-4 text-blue-500" />
-                  1600-6792
+                  1600-9762
                 </span>
                 <a href="tel:1600-9762" className="bg-blue-500 text-white px-6 py-3 rounded-full font-bold text-center shadow-md block">
                   견적 문의
@@ -140,7 +140,7 @@ const Hero = () => {
               ✨ 프리미엄 정기청소 서비스
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-tighter mb-6 leading-[1.2] break-keep [text-shadow:_0_4px_8px_rgba(0,0,0,0.5)]">
-              관리의 차이가 <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">공간의 가치</span>를 바꿉니다
+              관리의 차이가 <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-200 [text-shadow:none] drop-shadow-sm">공간의 가치</span>를 바꿉니다
             </h1>
             <p className="text-lg md:text-xl text-white mb-10 leading-[1.6] tracking-tight break-keep font-bold max-w-2xl [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
               표면이 아닌 내부까지, 경험 많은 정기관리 전문가가 <br className="hidden md:block" />체계적인 관리로 공간의 가치를 높입니다.
